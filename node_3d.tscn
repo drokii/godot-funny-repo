@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://den7vbqy81sbr"]
+[gd_scene load_steps=7 format=3 uid="uid://den7vbqy81sbr"]
+
+[ext_resource type="Script" path="res://movement.gd" id="1_gn7mc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vv0r6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,20 +30,20 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36743, 0, 0)
+use_collision = true
 size = Vector3(20, 0, 20)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="Char" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0198898, 1.50401, 0.00196671)
+script = ExtResource("1_gn7mc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Char"]
 mesh = SubResource("CapsuleMesh_6hd7g")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Char"]
 shape = SubResource("ConvexPolygonShape3D_b1moo")
 
-[node name="Node3D" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.447373, 0.640971, 0.0714169)
+[node name="Hed" type="Node3D" parent="Char"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000333428, 0.480679, -0.00606537)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433444, -0.0489538, 0)
+[node name="Camera3D" type="Camera3D" parent="Char/Hed"]
