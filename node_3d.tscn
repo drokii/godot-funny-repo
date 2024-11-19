@@ -33,10 +33,37 @@ environment = SubResource("Environment_0jb63")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 21.4133, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="World" type="CSGBox3D" parent="."]
 use_collision = true
 size = Vector3(40, 0, 40)
 material = SubResource("StandardMaterial3D_vi4nm")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2258, 0.589569, 12.2011)
+use_collision = true
+polygon = PackedVector2Array(0, 0, -2.94588, 2.63982, 1, 1, 4.62679, -0.565578)
+depth = 5.78
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="World"]
+transform = Transform3D(-0.984729, 0, 0.174095, 0, 1, 0, -0.174095, 0, -0.984729, -7.32243, 0.545866, 6.4834)
+use_collision = true
+polygon = PackedVector2Array(0, 0, -3.29358, 2.7419, 1, 1, 4.62679, -0.565578)
+depth = 5.78
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41632, 1.49921, 2.41752)
+use_collision = true
+size = Vector3(5, 5, 5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41632, 2.22827, -5.26149)
+use_collision = true
+size = Vector3(5, 6.45813, 5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81991, 2.96192, -5.27754)
+use_collision = true
+size = Vector3(5, 8.03195, 5)
 
 [node name="Char" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33568, 1.79878, 11.2479)
@@ -52,30 +79,3 @@ shape = SubResource("ConvexPolygonShape3D_b1moo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000333428, 0.480679, -0.00606537)
 
 [node name="Camera3D" type="Camera3D" parent="Char/Hed"]
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2258, 0.589569, 12.2011)
-use_collision = true
-polygon = PackedVector2Array(0, 0, -2.94588, 2.63982, 1, 1, 4.62679, -0.565578)
-depth = 5.78
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="."]
-transform = Transform3D(-0.984729, 0, 0.174095, 0, 1, 0, -0.174095, 0, -0.984729, -7.32243, 0.545866, 6.4834)
-use_collision = true
-polygon = PackedVector2Array(0, 0, -3.29358, 2.7419, 1, 1, 4.62679, -0.565578)
-depth = 5.78
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41632, 1.49921, 2.41752)
-use_collision = true
-size = Vector3(5, 5, 5)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41632, 2.22827, -5.26149)
-use_collision = true
-size = Vector3(5, 6.45813, 5)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81991, 2.96192, -5.27754)
-use_collision = true
-size = Vector3(5, 8.03195, 5)
