@@ -11,15 +11,14 @@ const SENSITIVITY = 0.004
 
 #bob variables
 const BOB_FREQ = 2.4
-const BOB_AMP = 0.08
+const BOB_AMP = 0.04
 var t_bob = 0.0
 
 #fov variables
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 9.8
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _ready():
